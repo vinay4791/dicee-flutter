@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   return runApp(
@@ -8,7 +9,7 @@ void main() {
         appBar: AppBar(
           title: Center(
             child: Text(
-              'Dicee',
+              'Dice App',
             ),
           ),
           backgroundColor: Colors.teal,
@@ -34,7 +35,9 @@ class DicePage_State extends State<DicePage> {
           Expanded(
             child: FlatButton(
               onPressed: () {
-                print('Left Button Pressed');
+                setState(() {
+                  leftDiceNum = 5;
+                });
               },
               child: Image.asset('images/dice$leftDiceNum.png'),
             ),
